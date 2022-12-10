@@ -1,138 +1,88 @@
-{
- "cells": [
-  {
-   "cell_type": "code",
-   "execution_count": 4,
-   "id": "b3194ebc-8ca3-456e-af15-2e22b87c8893",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "class Person:\n",
-    "    def __init__(self, name):\n",
-    "        self.__name = name\n",
-    "        \n",
-    "    @property\n",
-    "    def name(self):\n",
-    "        return self.__name\n",
-    "    \n",
-    "    @name.setter\n",
-    "    def name(self, name):\n",
-    "        self.__name = name\n",
-    "        \n",
-    "    @name.deleter\n",
-    "    def name(self):\n",
-    "        del self.__name"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 43,
-   "id": "97cda37c-a17e-42df-bed2-6a856e47c149",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "class Instructor(Person):\n",
-    "    def __init__(self, name, hours=\"not specified\", comm=\"not specified\"):\n",
-    "        Person.__init__(self,name)\n",
-    "        self.__teaches = []\n",
-    "        self.__hours = hours\n",
-    "        self.__comm = comm\n",
-    "        \n",
-    "    @property\n",
-    "    def teaches(self):\n",
-    "        return self.__teaches\n",
-    "    \n",
-    "    @property\n",
-    "    def hours(self):\n",
-    "        return self.__hours\n",
-    "    \n",
-    "    @property\n",
-    "    def comm(self):\n",
-    "        return self.__comm\n",
-    "    \n",
-    "    @teaches.setter\n",
-    "    def teaches(self, teach):\n",
-    "        self.__teaches.append(teach)\n",
-    "        \n",
-    "    @hours.setter\n",
-    "    def hours(self, hours):\n",
-    "        self.__hours = hours\n",
-    "        \n",
-    "    @comm.setter\n",
-    "    def comm(self, comm):\n",
-    "        self.__comm = comm\n",
-    "        \n",
-    "    @teaches.deleter\n",
-    "    def teaches(self):\n",
-    "        del self.__teaches\n",
-    "    \n",
-    "    @hours.deleter\n",
-    "    def hours(self):\n",
-    "        del self.__hours\n",
-    "    \n",
-    "    @comm.deleter\n",
-    "    def comm(self):\n",
-    "        del self.__comm"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 38,
-   "id": "96431bc1-e744-4a97-9714-1621fe229566",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "class Student(Person):\n",
-    "    def __init__(self, name, sID):\n",
-    "        Person.__init__(self,name)\n",
-    "        self.__sID = sID\n",
-    "        self.__courses = []\n",
-    "        \n",
-    "    @property\n",
-    "    def sID(self):\n",
-    "        return self.__sID\n",
-    "       \n",
-    "    @property\n",
-    "    def courses(self):\n",
-    "        return self.__courses\n",
-    "    \n",
-    "    @sID.setter\n",
-    "    def sID(self, sID):\n",
-    "        self.__sID = sID\n",
-    "        \n",
-    "    @courses.setter\n",
-    "    def courses(self, course):\n",
-    "        self.__courses.append(course) \n",
-    "        \n",
-    "    @sID.deleter\n",
-    "    def sID(self):\n",
-    "        del self.__sID\n",
-    "    \n",
-    "    @courses.deleter\n",
-    "    def courses(self):\n",
-    "        del self.__courses"
-   ]
-  }
- ],
- "metadata": {
-  "kernelspec": {
-   "display_name": "Python 3 (ipykernel)",
-   "language": "python",
-   "name": "python3"
-  },
-  "language_info": {
-   "codemirror_mode": {
-    "name": "ipython",
-    "version": 3
-   },
-   "file_extension": ".py",
-   "mimetype": "text/x-python",
-   "name": "python",
-   "nbconvert_exporter": "python",
-   "pygments_lexer": "ipython3",
-   "version": "3.9.12"
-  }
- },
- "nbformat": 4,
- "nbformat_minor": 5
-}
+class Person:
+    def __init__(self, name):
+        self.__name = name
+    
+    @property
+    def name(self):
+        return self.__name
+        
+    @name.setter
+    def name(self, name):
+        self.__name = name
+
+    @name.deleter
+    def name(self):
+        del self.__name
+
+class Instructor(Person):
+    def __init__(self, name, hours="not specified", comm="not specified"):
+        Person.__init__(self,name)
+        self.__teaches = []
+        self.__hours = hours
+        self.__comm = comm
+    
+    @property
+    def teaches(self):
+        return self.__teaches
+
+    @property
+    def hours(self):
+        return self.__hours
+
+    @property
+    def comm(self):
+        return self.__comm
+
+    @teaches.setter
+    def teaches(self, teach):
+        self.__teaches.append(teach)
+    
+    @hours.setter
+    def hours(self, hours):
+        self.__hours = hours
+    
+    @comm.setter
+    def comm(self, comm):
+        self.__comm = comm
+    
+    @teaches.deleter
+    def teaches(self):
+        del self.__teaches
+
+    @hours.deleter
+    def hours(self):
+        del self.__hours
+
+    @comm.deleter
+    def comm(self):
+        del self.__comm"
+
+class Student(Person):
+    def __init__(self, name, sID):
+        Person.__init__(self,name)
+        self.__sID = sID
+        self.__courses = []
+    
+    @property
+    def sID(self):
+        return self.__sID
+   
+    @property
+    def courses(self):
+        return self.__courses
+
+    @sID.setter
+    def sID(self, sID):
+        self.__sID = sID
+    
+    @courses.setter
+    def courses(self, course):
+        self.__courses.append(course) 
+    
+    @sID.deleter
+    def sID(self):
+        del self.__sID
+
+    @courses.deleter
+    def courses(self):
+        del self.__courses
