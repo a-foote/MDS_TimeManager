@@ -15,7 +15,7 @@ class Person:
         del self.__name
 
 class Instructor(Person):
-    def __init__(self, name, hours="not specified", comm="not specified"):
+    def __init__(self, name, hours="Not Specified", comm="Not Specified"):
         Person.__init__(self,name)
         self.__teaches = []
         self.__hours = hours
@@ -55,7 +55,7 @@ class Instructor(Person):
 
     @comm.deleter
     def comm(self):
-        del self.__comm"
+        del self.__comm
 
 class Student(Person):
     def __init__(self, name, sID):
