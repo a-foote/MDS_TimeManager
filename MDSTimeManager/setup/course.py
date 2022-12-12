@@ -139,16 +139,16 @@ class Quiz(Deliverable):
         del self.__qtype
 
 class AssignLab(Deliverable):
-    def __init__(self, dname, date, assignDate, status="Incomplete", dur="", durleft="", subloc=""):
+    def __init__(self, dname, date, status="Incomplete", dur="", durleft="", subloc=""):
         Deliverable.__init__(self,dname,date,status)
-        self.__assignDate = assignDate
+        self.__date = date
         self.__dur = dur
         self.__durleft = durleft
         self.__subloc = subloc
 
     @property
-    def assignDate(self):    
-        return self.__assignDate
+    def date(self):    
+        return self.__date
     
     @property
     def dur(self):    
@@ -162,9 +162,9 @@ class AssignLab(Deliverable):
     def subloc(self):    
         return self.__subloc
     
-    @assignDate.setter
-    def assignDate(self, assignDate):
-        self.__assignDate = assignDate
+    @date.setter
+    def date(self, date):
+        self.__date = date
         
     @dur.setter
     def dur(self, dur):
@@ -178,9 +178,9 @@ class AssignLab(Deliverable):
     def subloc(self, subloc):
         self.__subloc = subloc
 
-    @assignDate.deleter
-    def assignDate(self):
-        del self.__assignDate
+    @date.deleter
+    def date(self):
+        del self.__date
         
     @dur.deleter
     def dur(self):
