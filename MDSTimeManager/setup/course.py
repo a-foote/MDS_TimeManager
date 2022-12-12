@@ -139,7 +139,7 @@ class Quiz(Deliverable):
         del self.__qtype
 
 class AssignLab(Deliverable):
-    def __init__(self, dname, date, status="Incomplete", assignDate, dur="", durleft="", subloc=""):
+    def __init__(self, dname, date, assignDate, status="Incomplete", dur="", durleft="", subloc=""):
         Deliverable.__init__(self,dname,date,status)
         self.__assignDate = assignDate
         self.__dur = dur
