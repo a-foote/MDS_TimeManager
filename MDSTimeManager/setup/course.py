@@ -1,5 +1,5 @@
 class Course:
-    def __init__(self, cname, instructor, block, rank):
+    def __init__(self, cname, instructor, block, rank=1):
         self.__cname = cname
         self.__instructor = instructor
         self.__block = block
@@ -110,6 +110,9 @@ class Deliverable:
     @status.deleter
     def status(self):
         del self.__status
+        
+    def __str__(self):
+        return [self.__dname,self.__date,self.__status]
         
 class Quiz(Deliverable):
     def __init__(self, dname, date, status="Incomplete", topics="", qtype=""):
