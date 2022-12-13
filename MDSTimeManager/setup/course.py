@@ -145,7 +145,7 @@ class Quiz(Deliverable):
         del self.__qtype
 
 class AssignLab(Deliverable):
-    def __init__(self, dname, date, status="Incomplete", dur=0, durleft="", subloc=""):
+    def __init__(self, dname, date, status="Incomplete", dur=1, durleft="", subloc=""):
         Deliverable.__init__(self,dname,date,status)
 
         self.__date = date
@@ -206,7 +206,7 @@ class AssignLab(Deliverable):
         del self.__subloc
 
 class Project(Deliverable):
-    def __init__(self, dname, date, status="Incomplete", milestones="", dur=0, durleft="", repo=""):
+    def __init__(self, dname, date, status="Incomplete", milestones="", dur=1, durleft="", repo=""):
         Deliverable.__init__(self,dname,date,status)
         self.__milestones = milestones
         self.__dur = dur
