@@ -1,36 +1,5 @@
 import system.deliverableviewer as dv
-
-def DeliverableViewer(deliverable_list):
-    for deliverable in deliverable_list:
-        print(deliverable)
-
-def DeliverableSearch(course_list):
-    lst = []
-    for course in course_list:
-        for deliverable in course.deliverables:
-            if (deliverable.date.split("/")[1] in dv.next7dates()):
-                lst.append(deliverable)
-    return lst
-                
-def DeliverableAll(course_list):
-    for course in course_list:
-        for deliverable in course.deliverables:
-            print(f"{deliverable.dname},{deliverable.date}")
-            
-def fetchranks(course_list):
-    totalranks = 0.0
-    for course in course_list:
-        totalranks = totalranks + float(course.rank)
-    return totalranks 
-    
-def timemanagercal(timeavailable, course_list):
-    studytime = 0.0
-    tr = fetchranks(course_list)
-    for course in course_list:
-        cr = float(course.rank)
-        studytime = (cr/tr)*timeavailable
-        print(f"Recommended study time for {course} is {studytime:.2f} hours ({studytime*60:1.0f} mins)")
-        
+                  
 #######################################################################################################################################
 
 import setup.course as c
@@ -90,7 +59,7 @@ Courses = [Data533, Data543, Data571, Data581]
 def userinput():
     
     type_assignLab = type(Data543Assignment1)
-    next7deliverables = tm.DeliverableSearch(Courses)
+    next7deliverables = dv.DeliverableSearch(Courses)
     
     print("Please choose a rank out of (1,2,3) with 3 being most difficult.")
     for course in Courses:
@@ -110,3 +79,17 @@ def userinput():
     print(f"\nTime left after assignments and labs: {weektime:.2f} hours")
     print("")
     return weektime
+
+def fetchranks(course_list):
+    totalranks = 0.0
+    for course in course_list:
+        totalranks = totalranks + float(course.rank)
+    return totalranks 
+    
+def timemanagercal(timeavailable, course_list):
+    studytime = 0.0
+    tr = fetchranks(course_list)
+    for course in course_list:
+        cr = float(course.rank)
+        studytime = (cr/tr)*timeavailable
+        print(f"Recommended study time for {course} is {studytime:.2f} hours ({studytime*60:1.0f} mins)")
