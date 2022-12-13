@@ -69,6 +69,13 @@ class Course:
     def __str__(self):
         return self.__cname
         
+        
+        
+        
+        
+        
+        
+        
 class Deliverable:
     def __init__(self, dname, date, status):
         self.__dname = dname
@@ -112,7 +119,7 @@ class Deliverable:
         del self.__status
         
     def __str__(self):
-        return [self.__dname,self.__date,self.__status]
+        return f"{self.__dname:21} due on: {self.__date} (MM/DD)"
         
 class Quiz(Deliverable):
     def __init__(self, dname, date, status="Incomplete", topics="", qtype=""):
@@ -145,7 +152,7 @@ class Quiz(Deliverable):
         del self.__qtype
 
 class AssignLab(Deliverable):
-    def __init__(self, dname, date, status="Incomplete", dur="", durleft="", subloc=""):
+    def __init__(self, dname, date, status="Incomplete", dur=0, durleft="", subloc=""):
         Deliverable.__init__(self,dname,date,status)
 
         self.__date = date
@@ -206,7 +213,7 @@ class AssignLab(Deliverable):
         del self.__subloc
 
 class Project(Deliverable):
-    def __init__(self, dname, date, status="Incomplete", milestones="", dur="", durleft="", repo=""):
+    def __init__(self, dname, date, status="Incomplete", milestones="", dur=0, durleft="", repo=""):
         Deliverable.__init__(self,dname,date,status)
         self.__milestones = milestones
         self.__dur = dur

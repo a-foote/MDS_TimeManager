@@ -15,7 +15,18 @@ def get7thdate():
     return str(the7thdate.day)
 
 def next7dates():
-    datelist = []
+    """
+    The function returns the next 7 dates (DD) from the current date.
+    
+    Input:
+    The function does not require any inputs and can be called directly.
+    
+    Output:
+    If today is December, 12: the output will be a list: ['13','14','15','16','17','18','19']
+    """
+    datelist=[]
     for i in range(1,8):
         datelist.append(str((datetime.datetime.now()+datetime.timedelta(i)).day))
     return datelist
+     
+   
