@@ -68,14 +68,7 @@ class Course:
         
     def __str__(self):
         return self.__cname
-        
-        
-        
-        
-        
-        
-        
-        
+         
 class Deliverable:
     def __init__(self, dname, date, status):
         self.__dname = dname
