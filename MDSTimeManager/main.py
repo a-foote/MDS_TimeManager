@@ -50,11 +50,11 @@ def execute():
 
     Courses = [Data533, Data543, Data571, Data581]
         
-    print("Welcome to the MDSTimeManager! \n\nPlease note: Presently this tool is strictly for use by MDS Okanagan students in Block 3 of 2022. Future versions of this package will expand for use in all blocks for both MDS Vancouver and Okanagan students.")
+    print("Welcome to the MDSTimeManager! \n\nPlease note:\nPresently this tool is strictly for use by MDS Okanagan students in Block 3 of 2022. \nFuture versions of this package will expand for use in all blocks for both MDS Vancouver and Okanagan students.")
     
     while True:
         
-        print(("\nEnter one of the following options:\n"
+        print(("\n\nEnter one of the following options:\n"
        "1    : Use the deliverableviewer and see upcoming due dates\n"
        "2    : Use the timemanagercalc and get study time recommendations\n"
        "x    : Quit the session"))
@@ -77,4 +77,4 @@ def execute():
         
         else:
             print("\n")
-            print("Input invalid, please try again.")
+            print("Invalid input, please try again.")

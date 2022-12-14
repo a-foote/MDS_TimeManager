@@ -9,7 +9,7 @@ def userinput(Courses):
     t=0
     next7deliverables = dv.DeliverableSearch(Courses)
     
-    print("Please choose a rank out of (1,2,3) with 3 being most difficult.")
+    print("\nPlease choose a rank for the following courses out of (1,2,3) with 3 being most difficult.")
     for course in Courses:
         print(f"For {course}: ")
         rank = input()

@@ -31,8 +31,10 @@ def next7dates():
     return datelist
 
 def DeliverableViewer(deliverable_list):
+    print("Deliverables due in the next 7 days are:\n")
     for deliverable in deliverable_list:
         print(deliverable)
+    print("\n")
 
 def DeliverableSearch(course_list):
     lst = []
