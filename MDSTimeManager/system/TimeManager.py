@@ -17,13 +17,21 @@ def userinput(Courses):
             print("Having a hard time following basic instructions? \nChoose from ranks 1, 2 or 3 only")
             rank = input()
         course.rank = rank
-    weektime = float(input("How much time is available in the next 7 days for studies (in hours)? "))
+    weektime = input("How much time is available in the next 7 days for studies (in hours)? ")
+    while (not weektime.isnumeric()):
+        print("\nInput should be a number.")
+        weektime = input("\nHow much time is available in the next 7 days for studies (in hours)? ")
+    weektime = float(weektime)
     w = weektime
-    print("How much time (in hours) you think you will take for the following:\n")
+    print("\nHow much time (in hours) you think you will take for the following:\n")
     for deliverable in next7deliverables:
         if isinstance(deliverable,c.AssignLab) or isinstance(deliverable,c.Project) :
             print(f"For {deliverable}")
-            time = float(input())
+            time = input()
+            while (not time.isnumeric()):
+                print("\nInput should be a number.")
+                time = input()
+            time = float(time)
             t = t + time
             weektime = weektime - time
             deliverable.dur = time
