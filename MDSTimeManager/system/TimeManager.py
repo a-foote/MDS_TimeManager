@@ -9,7 +9,7 @@ import datetime
 
 # Course 1
 Data533 = c.Course("Object Oriented Programming","Khalad Hasan","3",1)
-Data533Project = c.Project("Data 533: Project- Time Manager","12/22", "None so far", "Bro no time!","MyRepo.git")
+Data533Project = c.Project("Data 533: Project- Time Manager","12/22", milestones="no milestones",repo="MyRepo.git")
 # How to assign deliverables to a course object
 Data533.deliverables = Data533Project
 
