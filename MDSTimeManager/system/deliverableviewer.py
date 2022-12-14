@@ -26,7 +26,7 @@ def next7dates():
     If today is December, 12: the output will be a list: ['13','14','15','16','17','18','19']
     """
     datelist=[]
-    for i in range(1,8):
+    for i in range(0,7):
         datelist.append(str((datetime.datetime.now()+datetime.timedelta(i)).day))
     return datelist
 
