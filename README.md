@@ -85,17 +85,31 @@ class Student. Main functions will be the getter, setter and delete methods.
 
 This module shows what deliverables are due in the next 7 days. 
 
-#### get7thDate 
+#### next7days
 
-	Alyssa - to do
+	- The next7days function takes no input and simply returns the next 7 dates (DD) from the current date.
+	- usage: next7days()
+	- output example: If today is December, 12: the return value will be a list: ['13','14','15','16','17','18','19']
 
 #### deliverableSearch
 
-	Alyssa - to do
+	- The deliverableSearch function takes in a list of course objects and returns a list of deliverable objects that have due dates within the next 7 days.
+	- usage: DeliverableSearch(courselist)
+	- output example: [<MDSTimeManager.setup.course.Quiz object at 0x00000281B4D51040>] if printing returned value
 
-### deliverableViewer
+#### deliverableViewer
 
-	Alyssa - to do
+	- The deliverableViewer function takes in a list of deliverable objects (AssignLab, Quiz, or Project), from the deliverableSearch function, that have a due date in the next 7 days, and prints the course name, deliverable name, and due date.
+	- usage: deliverableViewer(deliverablelist)
+	- output example: "Data533: Quiz         due on: 12/20 (MM/DD)"
+
+#### deliverableAll
+
+	- The deliverableAll function takes in a list of course objects and prints the course name, deliverable name, and due date of all deliverables for each course.
+	- usage: deliverableViewer(courselist)
+	- output example: 	Data533: Quiz,12/20
+						Data533: Lab 1,12/05
+						Data533: Project- Time Manager,12/22
 
 ### Module 2: timemanager.py
 
@@ -104,16 +118,82 @@ depending on how they have ranked the course and upcoming deliverables.
 
 #### userinput
 
-	Alyssa - to do
+	- The userinput function takes in a list of course objects and collects input from the user regarding their study time for the next 7 days, ranks for each course, and amount of time needed to complete the associated deliverables. Then it outputs the amount of study time less time needed to complete the deliverables and returns that value.
+	- usage: userinput(courselist)
+	- output example: 20.0
 
-#### fetchRanks
+#### fetchranks
 
-	Alyssa - to do
+	- The fetchRanks function takes in a list of course objects and returns the total of all ranks associated with each course in the list.
+	- usage: fetchRanks(courselist)
+	- output example: 1.0
 
-#### fetchDeliverables
+#### timemanagercal
+
+	- The timemanagercalc function takes in the time availability, returned from the userinput function, and a list of course objects, then prints the recommended study time for each course less the time needed to complete the deliverables.
+	- usage: timeanagercal(timeavailable, course_list)
+	- output example: 
+						Recommended study time for Object Oriented Programming is 2.50 hours (150 mins)
+						Recommended study time for Data Collection is 5.00 hours (300 mins)
+						Recommended study time for Resampling and Regularization is 7.50 hours (450 mins)
+						Recommended study time for Modelling and Simulation is 5.00 hours (300 mins)
+						
+### Module 3: main.py
+This module  is the main control center for the package and runs all other modules from here.
+
+#### execute
+	- The execute function runs provides the user with a menu option and calls the other module functions/methods as needed.
+	- usage: import MDSTimeManager as mdstm, mdstm.execute()
+	- output example: 
 	
-	Alyssa - to do
+					Welcome to the MDSTimeManager! 
 
-### timeManagerCalc
+					Please note:
+					Presently this tool is strictly for use by MDS Okanagan students in Block 3 of 2022. 
+					Future versions of this package will expand for use in all blocks for both MDS Vancouver and Okanagan students.
 
-	Alyssa - to do
+
+					Enter one of the following options:
+					1    : Use the deliverableviewer and see upcoming or all due dates
+					2    : Use the timemanagercalc and get study time recommendations
+					x    : Quit the session
+					 2
+
+
+
+					Please choose a rank for the following courses out of (1,2,3) with 3 being most difficult.
+					For Object Oriented Programming: 
+					 3
+					For Data Collection: 
+					 1
+					For Resampling and Regularization: 
+					 1
+					For Modelling and Simulation: 
+					 1
+					How much time is available in the next 7 days for studies (in hours)?  20
+
+					How much time (in hours) you think you will take for the following:
+
+					For Data543: Assignment 2           due on: 12/16 (MM/DD)
+					 1
+					For Data571: Assignment 2           due on: 12/19 (MM/DD)
+					 2
+					For Data 581: Lab 3                 due on: 12/15 (MM/DD)
+					 2
+
+
+					Time left after assignments and labs: 15.00 hours
+
+					Recommended study time for Object Oriented Programming is 7.50 hours (450 mins)
+					Recommended study time for Data Collection is 2.50 hours (150 mins)
+					Recommended study time for Resampling and Regularization is 2.50 hours (150 mins)
+					Recommended study time for Modelling and Simulation is 2.50 hours (150 mins)
+
+
+					Enter one of the following options:
+					1    : Use the deliverableviewer and see upcoming or all due dates
+					2    : Use the timemanagercalc and get study time recommendations
+					x    : Quit the session
+					 x
+
+					Your MDSTimeManger session is over. Have a good day :)

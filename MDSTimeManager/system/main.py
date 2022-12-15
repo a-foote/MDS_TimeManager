@@ -1,7 +1,7 @@
 def execute():
-    import setup.course as c
-    import system.deliverableviewer as dv
-    import system.timemanager as tm
+    import MDSTimeManager.setup.course as c
+    import MDSTimeManager.system.deliverableviewer as dv
+    import MDSTimeManager.system.TimeManager as tm
     
     # Course 1
     Data533 = c.Course("Object Oriented Programming","Khalad Hasan","3",1)
@@ -55,7 +55,7 @@ def execute():
     while True:
         
         print(("\n\nEnter one of the following options:\n"
-       "1    : Use the deliverableviewer and see upcoming due dates\n"
+       "1    : Use the deliverableviewer and see upcoming or all due dates\n"
        "2    : Use the timemanagercalc and get study time recommendations\n"
        "x    : Quit the session"))
         
@@ -67,9 +67,19 @@ def execute():
         
         if usrinput == "1":
             print("\n")
-            next7deliverables = dv.DeliverableSearch(Courses)
-            dv.DeliverableViewer(next7deliverables)
-        
+            print(("\n\nEnter one of the following options:\n"
+       "a    : View deliverables due in the next 7 days\n"
+       "b    : View all deliverables"))
+            usrinput = input()
+            if usrinput == "a":
+                print("\n")
+                next7deliverables = dv.DeliverableSearch(Courses)
+                dv.DeliverableViewer(next7deliverables)
+            elif usrinput == "b":
+                print("\n")
+                dv.DeliverableAll(Courses)
+            else:
+                print("Invalid input, please try again.")
         elif usrinput == "2":
             print("\n")
             availabletime = tm.userinput(Courses)
