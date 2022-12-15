@@ -1,7 +1,7 @@
-import system.deliverableviewer as dv
-import setup.course as c
-import system.timemanager as tm 
-import system.deliverableviewer as dv
+import MDSTimeManager.system.deliverableviewer as dv
+import MDSTimeManager.setup.course as c
+import MDSTimeManager.system.TimeManager as tm 
+import MDSTimeManager.system.deliverableviewer as dv
 import datetime 
 
 def userinput(Courses):
@@ -23,7 +23,8 @@ def userinput(Courses):
         weektime = input("\nHow much time is available in the next 7 days for studies (in hours)? ")
     weektime = float(weektime)
     w = weektime
-    print("\nHow much time (in hours) you think you will take for the following:\n")
+    if len(next7deliverables) > 0 and (any(isinstance(asslab, c.AssignLab) for asslab in next7deliverables) or any(isinstance(proj, c.Project) for proj in next7deliverables)):
+        print("\nHow much time (in hours) you think you will take for the following:\n")
     for deliverable in next7deliverables:
         if isinstance(deliverable,c.AssignLab) or isinstance(deliverable,c.Project) :
             print(f"For {deliverable}")
