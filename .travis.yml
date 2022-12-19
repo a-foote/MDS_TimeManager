@@ -8,8 +8,7 @@ before_install:
   - pip install -U pip
   - pip install -U pytest
   - pip install codecov
-install:
-  - pip install ".[test]" . # install package + test dependencies
+  - pip install datetime
 # command to run tests
 script:
   - python mdstm_testsuite.py
