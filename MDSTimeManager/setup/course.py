@@ -112,7 +112,7 @@ class Deliverable:
         del self.__status
         
     def __str__(self):
-        return f"{self.__dname:31} due on: {self.__date} (MM/DD)"
+        return f"{self.__dname:31} due on: {self.__date} MM-DD"
         
 class Quiz(Deliverable):
     def __init__(self, dname, date, status="Incomplete", topics="", qtype=""):
