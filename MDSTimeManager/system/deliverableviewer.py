@@ -16,24 +16,44 @@ def next7dates():
     return datelist
 
 def DeliverableViewer(deliverable_list):
-    print("Deliverables due in the next 7 days are:\n")
-    for deliverable in deliverable_list:
-        print(deliverable)
-    print("\n")
+    try:
+        print("Deliverables due in the next 7 days are:\n")
+        for deliverable in deliverable_list:
+            print(deliverable)
+        print("\n")
+    
+    except Exception as ex:
+        print(f'Error Message: {ex}')
+        print(f'Error Type: {type(ex)}')
+        print("Please try again!")
 
 def DeliverableSearch(course_list):
-    lst = []
-    for course in course_list:
-        for deliverable in course.deliverables:
-            if (deliverable.date.split("/")[1] in next7dates()):
-                lst.append(deliverable)
-    return lst
-                
+    try:
+        lst = []
+        for course in course_list:
+            for deliverable in course.deliverables:
+                if (deliverable.date.split("/")[1] in next7dates()):
+                    lst.append(deliverable)
+        return lst
+    
+    except ValueError:
+        print("DeliverableSearch failed when looking for deliverables due in the next 7 days.")
+    except Exception as ex:
+        print(f'Error Message: {ex}')
+        print(f'Error Type: {type(ex)}')
+        print("Please try again!")
+        
 def DeliverableAll(course_list):
-    for course in course_list:
-        for deliverable in course.deliverables:
-            print(f"{deliverable.dname},{deliverable.date}")
-       
+    try:
+        for course in course_list:
+            for deliverable in course.deliverables:
+                print(f"{deliverable.dname},{deliverable.date}")
+    except AttributeError:
+        print("An error occured when looking for all deliverables.")
+    except Exception as ex:
+        print(f'Error Message: {ex}')
+        print(f'Error Type: {type(ex)}')
+        print("Please try again!")
 
      
    
