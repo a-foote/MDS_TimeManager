@@ -1,3 +1,6 @@
+#Build Stamp
+[![Build Status](https://app.travis-ci.com/a-foote/MDS_TimeManager.svg?branch=main)](https://app.travis-ci.com/a-foote/MDS_TimeManager)
+
 # MDS_TimeManager
 
 This package that can help UBC Master of Data Science (MDS) students manage their time. A student can view the upcoming deliverables 
