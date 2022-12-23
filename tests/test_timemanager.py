@@ -72,7 +72,13 @@ class Testfetchranks(unittest.TestCase):
         self.assertIsNot(Data533, Data543)
         self.assertIsInstance(tm.fetchranks(Courses), float)
         self.assertIsNotNone(tm.fetchranks(Courses))
+        self.assertIsNotNone(tm.userinput(Courses))
         
+##########################################################################################################################33        
+# from deliverableviewer
+        self.assertIsNotNone(int(dv.next7dates()[1])+0)
+        self.assertEqual(int(dv.next7dates()[3])+0, adddate(2))
+    
 class Testtimemanagercal(unittest.TestCase):
     
     def setUp(self):
@@ -91,5 +97,7 @@ class Testtimemanagercal(unittest.TestCase):
         self.assertIsNot(tm.timemanagercal(6, Courses), 6)
         self.assertIsInstance(tm.timemanagercal(11,Courses), type(None))
         self.assertNotEqual(tm.timemanagercal(17, Courses), 17)
+        self.assertIsNone(tm.timemanagercal(0,Courses))
+        self.assertIsNotNone(int(dv.next7dates()[1])+2)  
         
 unittest.main(argv=[''], verbosity=0, exit=False)
