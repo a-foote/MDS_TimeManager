@@ -200,3 +200,5 @@ This module  is the main control center for the package and runs all other modul
 					 x
 
 					Your MDSTimeManger session is over. Have a good day :)
+					
+Link to the PyPi package: https://pypi.org/project/MDSTimeManager/
