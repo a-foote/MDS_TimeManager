@@ -72,7 +72,6 @@ class Testfetchranks(unittest.TestCase):
         self.assertIsNot(Data533, Data543)
         self.assertIsInstance(tm.fetchranks(Courses), float)
         self.assertIsNotNone(tm.fetchranks(Courses))
-        self.assertIsNotNone(tm.userinput(Courses))
         
 ##########################################################################################################################33        
 # from deliverableviewer

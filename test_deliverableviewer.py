@@ -84,7 +84,6 @@ class Testnext7dates(unittest.TestCase):
         self.assertNotEqual(int(dv.next7dates()[2])+3, adddate(5))   
         self.assertIs(int(dv.next7dates()[1])+3, int(dv.next7dates()[2])+2)
         self.assertIsInstance((dv.next7dates()[1]), type('a'))
-        self.assertIsNotNone(tm.userinput(Courses))
 #########################################################################################################################        
 
         self.assertIs(tm.timemanagercal(24, Courses), None)
