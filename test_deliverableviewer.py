@@ -84,6 +84,12 @@ class Testnext7dates(unittest.TestCase):
         self.assertNotEqual(int(dv.next7dates()[2])+3, adddate(5))   
         self.assertIs(int(dv.next7dates()[1])+3, int(dv.next7dates()[2])+2)
         self.assertIsInstance((dv.next7dates()[1]), type('a'))
+#########################################################################################################################        
+
+        self.assertIs(tm.timemanagercal(24, Courses), None)
+        self.assertIsNot(tm.timemanagercal(6, Courses), 6)
+        self.assertIsInstance(tm.timemanagercal(11,Courses), type(None))
+        self.assertNotEqual(tm.timemanagercal(17, Courses), 17)
 
 class TestDeliverableAll(unittest.TestCase):
     
@@ -97,5 +103,7 @@ class TestDeliverableAll(unittest.TestCase):
         self.assertIsInstance(dv.DeliverableAll(Courses), type(None))
         self.assertNotEqual(dv.DeliverableAll(Courses), 6)
         self.assertIs(dv.DeliverableAll(Courses), None)
+        self.assertIsNotNone(dv.DeliverableSearch(Courses))
+        self.assertIsNone(dv.DeliverableAll(Courses))
         
 unittest.main(argv=[''], verbosity=0, exit=False)
