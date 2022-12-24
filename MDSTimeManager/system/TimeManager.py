@@ -12,7 +12,7 @@ except ImportError as ierr:
     
 def userinput(Courses):
     try:
-        t=0
+        t=0.0
         next7deliverables = dv.DeliverableSearch(Courses)
 
         print("\nPlease choose a rank for the following courses out of (1,2,3) with 3 being most difficult.")
@@ -30,8 +30,8 @@ def userinput(Courses):
         
         while True:
             try:
-                weektime = input("How much time is available in the next 7 days for studies (in hours)? ")
-                if weektime.isnumeric():
+                weektime = float(input("How much time is available in the next 7 days for studies (in hours)? "))
+                if weektime >= 0.0 and weektime <= 70.0:
                     break
                 else:
                     raise err.usrInputError(weektime)
@@ -46,8 +46,8 @@ def userinput(Courses):
             if isinstance(deliverable,c.AssignLab) or isinstance(deliverable,c.Project) :
                 while True:
                     try:
-                        time = input(f"For {deliverable}")
-                        if time.isnumeric():
+                        time = float(input(f"For {deliverable}: "))
+                        if time >= 0.0 and time <= 50.0:
                             break
                         else:
                             raise err.usrInputError(time)
