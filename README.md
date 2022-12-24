@@ -200,3 +200,16 @@ This module  is the main control center for the package and runs all other modul
 					 x
 
 					Your MDSTimeManger session is over. Have a good day :)
+
+
+####################################################################################################################################3					
+Sub-package 1
+Module 1:  People
+This package will include a class ‘People’ which will have some basic attributes that will be inherited by the class Instructor and class Student. Main functions will be the getter, setter and delete methods.
+Module 2: Deliverables
+This module will have classes for entities Course, Deliverable, Quiz, Assignment and Lab. Deliverable class will be inherited by class Quiz, Assignment and Lab since they share common attributes.
+Sub-package 2
+Module 1: DeliverableViewer
+This module will be able to show what the deliverables in the next 7 days are like Labs, Assignments, or upcoming Quizzes or Projects and the date they are [due] on.
+Module 2: TimeManager
+This module will be doing all the computations for the package. It will take study time availability, for the next 7 days, from the student and recommend an allotted study time for each course depending on how they have ranked the course and upcoming deliverables.
