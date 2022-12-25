@@ -65,7 +65,7 @@ def execute():
                 usrinput = input("Enter your selection: ")
 
                 if usrinput == "x":
-                    print("\nYour MDSTimeManger session is over. Have a good day :)")
+                    print("\nYour MDSTimeManager session is over. Have a good day :)")
                     break 
 
                 if usrinput == "1":
