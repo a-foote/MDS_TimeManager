@@ -1,4 +1,4 @@
-import ..MDSTimeManager.setup.person as p
+from ..MDSTimeManager.setup import person as p
 import unittest
 
 # creating objects
