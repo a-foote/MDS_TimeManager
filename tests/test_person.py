@@ -1,4 +1,5 @@
-from ..MDSTimeManager.setup import person as p
+import sys
+sys.path.append('../MDSTimeManager/setup/person.py') as p
 import unittest
 
 # creating objects
