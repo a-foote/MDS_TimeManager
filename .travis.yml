@@ -10,7 +10,7 @@ before_install:
   - pip install datetime
 # command to run tests
 script:
-  - python mdstm_testsuite.py
+  - python tests/mdstm_testsuite.py
 #submit code coverage
 after_success:
   - codecov
