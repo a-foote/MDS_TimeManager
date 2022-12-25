@@ -1,6 +1,6 @@
 import sys
 sys.path.append('../MDSTimeManager')
-import steup.person as p
+import person as p
 import unittest
 
 # creating objects
