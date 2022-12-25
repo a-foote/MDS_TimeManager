@@ -1,4 +1,7 @@
-import setup.person as p
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.realpath(__file__)) + "/../MDSTimeManager/setup/")
+import person as p
 import unittest
 
 # creating objects
